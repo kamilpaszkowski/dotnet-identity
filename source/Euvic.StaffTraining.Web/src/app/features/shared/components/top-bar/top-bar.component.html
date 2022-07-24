@@ -1,0 +1,18 @@
+<p-megaMenu [model]="items">
+  <p-dropdown
+    [options]="attendeesLookup"
+    [(ngModel)]="selectedAttendee"
+    optionLabel="label"
+    class="profile-selection"
+    (onChange)="onProfileChanged($event)"
+  ></p-dropdown>
+  <span
+    class="profile-container"
+    [ngClass]="{ used: profile.totalConfirmedHours == profile.allowedHours }"
+  >
+    <span>Wykorzystane godziny:</span>
+    <span>{{ profile.totalConfirmedHours }}</span>
+    <span>/</span>
+    <span>{{ profile.allowedHours }}</span>
+  </span>
+</p-megaMenu>

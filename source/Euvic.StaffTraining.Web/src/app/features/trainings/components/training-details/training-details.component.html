@@ -1,0 +1,27 @@
+<div [formGroup]="trainingDetailsForm">
+  <div class="field">
+    <label class="col-fixed" style="width: 150px">Tytuł:</label>
+    <input type="text" pInputText formControlName="title" />
+  </div>
+  <div class="field">
+    <label class="col-fixed" style="width: 150px">Opis:</label>
+    <input type="text" pInputText formControlName="description" />
+  </div>
+  <div class="field">
+    <label class="col-fixed" style="width: 150px">Czas szkolenia:</label>
+    <p-inputNumber formControlName="duration"></p-inputNumber>
+  </div>
+  <div class="field">
+    <label class="col-fixed" style="width: 150px">Data Szkolenia:</label>
+    <p-calendar formControlName="startDate"></p-calendar>
+  </div>
+  <div style="text-align: right">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Zapisz"
+      class="p-button-outlined"
+    ></button>
+  </div>
+</div>

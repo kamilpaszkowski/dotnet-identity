@@ -1,0 +1,21 @@
+.profile-container {
+  padding: 10px;
+  border: 1px solid #28a745;
+  border-radius: 5px;
+  color: #28a745;
+  background: white;
+  vertical-align: super;
+  > * {
+    margin-right: 5px;
+  }
+
+  &.used {
+    color: #dc3545;
+    border: 1px solid #dc3545;
+  }
+}
+
+.profile-selection {
+  vertical-align: middle;
+  margin-right: 5px;
+}

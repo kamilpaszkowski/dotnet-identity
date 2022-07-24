@@ -49,6 +49,22 @@ INSERT [dbo].[Lecturers] ([Id], [Firstname], [Lastname], [CreateDate], [UpdateDa
 GO
 SET IDENTITY_INSERT [dbo].[Lecturers] OFF
 GO
+SET IDENTITY_INSERT [dbo].[Technologies] ON
+GO
+INSERT [dbo].[Technologies] ([Id], [Name], [Scope], [CreateDate], [UpdateDate]) VALUES (1, N'.NET', N'Backend', CAST(N'0001-01-01T00:00:00.0000000' AS DateTime2), CAST(N'2022-05-23T08:44:16.0235548' AS DateTime2))
+GO
+INSERT [dbo].[Technologies] ([Id], [Name], [Scope], [CreateDate], [UpdateDate]) VALUES (2, N'SQL', N'Backend', CAST(N'2022-05-22T16:00:13.2828669' AS DateTime2), CAST(N'2022-05-22T16:00:13.2828724' AS DateTime2))
+GO
+INSERT [dbo].[Technologies] ([Id], [Name], [Scope], [CreateDate], [UpdateDate]) VALUES (3, N'Entity Framework', N'Backend', CAST(N'2022-05-22T16:00:22.7642073' AS DateTime2), CAST(N'2022-05-22T16:00:22.7642076' AS DateTime2))
+GO
+INSERT [dbo].[Technologies] ([Id], [Name], [Scope], [CreateDate], [UpdateDate]) VALUES (4, N'React', N'Frontend', CAST(N'2022-05-22T16:00:29.5913737' AS DateTime2), CAST(N'2022-05-22T16:00:29.5913740' AS DateTime2))
+GO
+INSERT [dbo].[Technologies] ([Id], [Name], [Scope], [CreateDate], [UpdateDate]) VALUES (5, N'Vue', N'Frontend', CAST(N'2022-05-22T16:00:35.4009060' AS DateTime2), CAST(N'2022-05-22T16:00:35.4009062' AS DateTime2))
+GO
+INSERT [dbo].[Technologies] ([Id], [Name], [Scope], [CreateDate], [UpdateDate]) VALUES (10002, N'Angular', N'Frontend', CAST(N'2022-05-23T10:09:07.4490316' AS DateTime2), CAST(N'2022-05-23T10:09:10.6561564' AS DateTime2))
+GO
+SET IDENTITY_INSERT [dbo].[Technologies] OFF
+GO
 INSERT [dbo].[Trainings] ([Id], [Title], [Description], [Duration], [CreateDate], [UpdateDate], [TrainingDate], [LecturerId], [TechnologyId]) VALUES (N'bec804dc-a6ac-44ec-84a6-13e777d1c796', N'.NET 5 Wprowadzanie - Środowisko', N'', 90, CAST(N'2022-05-22T16:00:57.4907627' AS DateTime2), CAST(N'2022-05-22T16:00:57.4908253' AS DateTime2), CAST(N'2022-04-11T11:00:00.0000000' AS DateTime2), 3, 1)
 GO
 INSERT [dbo].[Trainings] ([Id], [Title], [Description], [Duration], [CreateDate], [UpdateDate], [TrainingDate], [LecturerId], [TechnologyId]) VALUES (N'7903e9ef-1e2d-4b4c-a61b-36338054b350', N'NET 5 Wprowadzanie - CQRS', N'', 360, CAST(N'2022-06-26T19:13:14.6671687' AS DateTime2), CAST(N'2022-06-26T19:13:14.6672229' AS DateTime2), CAST(N'2022-06-26T19:13:02.5190000' AS DateTime2), 3, 1)

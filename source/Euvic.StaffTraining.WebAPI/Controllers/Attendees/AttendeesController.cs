@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Euvic.StaffTraining.Contracts.Attendees.Queries;
-using Euvic.StaffTraining.WebAPI.Auth;
 using Euvic.StaffTraining.WebAPI.Controllers.Attendees.Requests;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +10,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers
 {
     [Route("api/attendees")]
     [ApiController]
-    [Authorize]
     public class AttendeesController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -56,7 +53,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers
         }
 
         [HttpPost("hr")]
-        [Authorize(Policy = AuthorizationPolicies.HROnlyRestricted)]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(long))]
         public async Task<IActionResult> CreateHRAttendee([FromBody] CreateAttendeeRequest request)
         {

@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Euvic.StaffTraining.Contracts.Lecturers.Queries;
 using Euvic.StaffTraining.WebAPI.Controllers.Lecturers.Requests;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +10,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers.Lecturers
 {
     [Route("api/lecturers")]
     [ApiController]
-    [Authorize]
     public class LecturersController : ControllerBase
     {
         private readonly IMediator _mediator;

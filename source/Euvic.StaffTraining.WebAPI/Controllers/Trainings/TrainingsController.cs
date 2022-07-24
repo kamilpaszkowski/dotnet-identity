@@ -4,10 +4,8 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 using Euvic.StaffTraining.Common;
 using Euvic.StaffTraining.Contracts.Trainings.Queries;
-using Euvic.StaffTraining.WebAPI.Auth;
 using Euvic.StaffTraining.WebAPI.Controllers.Requests;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +13,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers
 {
     [Route("api/trainings")]
     [ApiController]
-    [Authorize]
     public class TrainingsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -44,7 +41,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Policy = AuthorizationPolicies.LecturerOnlyRestricted)]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Guid))]
         public async Task<IActionResult> CreateTraining([FromBody] CreateTrainingRequest request)
         {
@@ -96,7 +92,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Policy = AuthorizationPolicies.LecturerThatCanDeleteTraining)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> DeleteTraining([FromRoute] Guid id)
         {

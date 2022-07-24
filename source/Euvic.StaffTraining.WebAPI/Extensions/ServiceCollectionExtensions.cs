@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using IdentityServer4.AccessTokenValidation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -46,18 +45,6 @@ namespace Euvic.StaffTraining.WebAPI.Extensions
                     }
                });
            });
-        }
-
-        public static void AddJwtAuthtentication(this IServiceCollection services, IConfiguration configuration)
-        {
-            var authorizationUrl = configuration.GetValue<string>("Identity:AuthorizationUrl");
-
-            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-                .AddJwtBearer(IdentityServerAuthenticationDefaults.AuthenticationScheme, options =>
-                {
-                    options.Authority = authorizationUrl;
-                    options.TokenValidationParameters.ValidateAudience = false;
-                });
         }
     }
 }

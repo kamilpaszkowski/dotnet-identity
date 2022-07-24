@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Euvic.StaffTraining.Contracts.Technologies.Queries;
 using Euvic.StaffTraining.WebAPI.Controllers.Technologies.Requests;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +10,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers.Technologies
 {
     [Route("api/technologies")]
     [ApiController]
-    [Authorize]
     public class TechnologiesController : ControllerBase
     {
         private readonly IMediator _mediator;

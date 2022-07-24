@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Euvic.StaffTraining.Contracts.Attendees.Queries;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +9,6 @@ namespace Euvic.StaffTraining.WebAPI.Controllers.Lookups
 {
     [Route("api/lookups")]
     [ApiController]
-    [Authorize]
     public class LookupsController : ControllerBase
     {
         private readonly IMediator _mediator;
